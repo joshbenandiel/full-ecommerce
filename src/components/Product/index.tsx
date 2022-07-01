@@ -1,6 +1,10 @@
 import { ProductContainer } from "./productStyled"
 import { ProductType } from "../../datatype/product.type"
 import ReactStars from 'react-stars'
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 
 interface IProps {
@@ -16,9 +20,11 @@ export const Product: React.FC<IProps> = ({product}) => {
     value: product.ratings,
     ifHalf: true
   }
-  console.log(product)
+
+  const navigate = useNavigate()
   return (
-    <ProductContainer>
+    <ProductContainer 
+      onClick={() => navigate(`/product/${product._id}`)}>
       <img src={product.image[0].url} alt="product-image" />
       <div className='details-wrapper'>
         <p>{product.name}</p>

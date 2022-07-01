@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { HomePage } from './pages/Home/HomePage';
 import { Footer } from './components/Footer';
+import { ProductDetails } from './pages/Product/ProductDetails';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/product/:id" element={<ProductDetails/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
